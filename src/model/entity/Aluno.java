@@ -4,14 +4,12 @@ public class Aluno {
 
     private final int id;
     private static int idContador = 1;
-
     private String nome;
     private String cpf;
 
     public Aluno(String nome, String cpf) {
         setNome(nome);
         setCpf(cpf);
-
         this.id = idContador++;
     }
 
