@@ -17,7 +17,7 @@ public class OficinaController {
         try {
             oficinaService.salvar(oficina);
         } catch(RuntimeException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 
@@ -25,7 +25,7 @@ public class OficinaController {
         try {
             return oficinaService.buscarPorId(id);
         } catch(RuntimeException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return null;
         }
     }
@@ -34,7 +34,7 @@ public class OficinaController {
         try{
             return oficinaService.listarTodos();
         } catch(RuntimeException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return null;
         }
     }
