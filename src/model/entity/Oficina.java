@@ -8,11 +8,11 @@ public class Oficina {
     private int cargaHoraria;
     private int vagasDisponiveis;
 
-    public Oficina(int id, String titulo, int cargaHoraria, int vagasDisponiveis) {
-        this.id = id;
-        this.titulo = titulo;
-        this.cargaHoraria = cargaHoraria;
-        this.vagasDisponiveis = vagasDisponiveis;
+    public Oficina(String titulo, int cargaHoraria, int vagasDisponiveis) {
+        setTitulo(titulo);
+        setCargaHoraria(cargaHoraria);
+        setVagasDisponiveis(vagasDisponiveis);
+        id = idContador++;
     }
 
     public int getId() { return id; }
