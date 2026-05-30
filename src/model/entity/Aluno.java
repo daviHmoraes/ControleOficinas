@@ -7,9 +7,10 @@ public class Aluno {
     private String nome;
     private String cpf;
 
-    public Aluno(String nome, String cpf) {
-        setNome(nome);
+
+    public Aluno(String nome, String cpf){
         setCpf(cpf);
+        setNome(nome);
         this.id = idContador++;
     }
 
