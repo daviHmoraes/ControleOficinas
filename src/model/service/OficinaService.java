@@ -27,11 +27,6 @@ public class OficinaService {
     }
 
     public List<Oficina> listarTodos(){
-        List<Oficina> list = oficinaRepository.listarTodos();
-        if(list.isEmpty()) {
-            throw new RuntimeException("ERRO: a lista está vazia");
-        } else {
-            return list;
-        }
+        return oficinaRepository.listarTodos();
     }
 }

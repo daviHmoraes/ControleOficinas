@@ -1,15 +1,43 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import controller.AlunoController;
+import controller.InscricaoController;
+import controller.OficinaController;
+import model.repository.AlunoRepository;
+import model.repository.InscricaoRepository;
+import model.repository.OficinaRepository;
+import model.service.AlunoService;
+import model.service.InscricaoService;
+import model.service.OficinaService;
+import view.View;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Repositories
+        AlunoRepository alunoRepository = new AlunoRepository();
+        OficinaRepository oficinaRepository = new OficinaRepository();
+        InscricaoRepository inscricaoRepository = new InscricaoRepository();
+
+        // Services
+        AlunoService alunoService = new AlunoService(alunoRepository);
+        OficinaService oficinaService = new OficinaService(oficinaRepository);
+        InscricaoService inscricaoService = new InscricaoService(inscricaoRepository);
+
+        // Controllers
+        AlunoController alunoController = new AlunoController(alunoService);
+        OficinaController oficinaController = new OficinaController(oficinaService);
+        InscricaoController inscricaoController = new InscricaoController(inscricaoService);
+
+        // View
+        View view = new View(
+                alunoController,
+                inscricaoController,
+                oficinaController
+        );
+
+        while (true) {
+            view.menuInicial();
+            System.out.println();
         }
     }
 }

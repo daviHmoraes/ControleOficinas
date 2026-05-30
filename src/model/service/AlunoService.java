@@ -27,12 +27,7 @@ public class AlunoService {
     }
 
     public List<Aluno> listarTodos(){
-        List<Aluno> list = alunoRepository.listarTodos();
-        if(list.isEmpty()){
-            throw new RuntimeException("ERRO: a lista está vazia.");
-        } else {
-            return list;
-        }
+        return alunoRepository.listarTodos();
     }
 
 }
