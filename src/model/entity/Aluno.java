@@ -41,4 +41,10 @@ public class Aluno {
         }
     }
 
+    public void exibirDados(){
+        System.out.println("Id: " + id);
+        System.out.println("Nome: " + nome);
+        System.out.println("CPF: " + cpf);
+    }
+
 }
